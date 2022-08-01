@@ -1,0 +1,10 @@
+<% if current_user %>
+<p>Hello <%= current_user.email %>!</p>
+<h3><%= link_to "New Projects", projects_path %></h3>
+<%= link_to "Sign_out", destroy_user_session_path, 'data-turbo-method': :delete%>
+<% else %>
+<p> your are not signed in. </p>
+<%= link_to "Sigin_in", new_user_registration_path %>
+<br />
+<%= link_to "Login", new_user_session_path %>
+<% end %>
